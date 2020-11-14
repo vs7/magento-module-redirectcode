@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VS7_RedirectCode>
+            <version>0.1.0</version>
+        </VS7_RedirectCode>
+    </modules>
+    <global>
+        <models>
+            <vs7_redirectcode>
+                <class>VS7_RedirectCode_Model</class>
+            </vs7_redirectcode>
+        </models>
+        <events>
+            <http_response_send_before>
+                <observers>
+                    <vs7_redirectcode>
+                        <class>VS7_RedirectCode_Model_Observer</class>
+                        <method>setRedirectCode</method>
+                    </vs7_redirectcode>
+                </observers>
+            </http_response_send_before>
+        </events>
+    </global>
+</config>
